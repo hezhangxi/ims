@@ -1,0 +1,55 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using DALayer;
+using System.Data;
+
+namespace BULayer
+{
+   public  class BULogin
+    {
+       DALogin myDALogin = new DALogin(); //实例话DA层类 
+       /// <summary>
+       /// 判断第一行第一例的值确实True 或Flase
+       /// </summary>
+       /// <param name="paramUserName"></param>
+       /// <returns></returns>
+       public bool CheckUser(string paramUserName)
+       {
+           bool IsCheckUser = false;
+           string RetuenValue = myDALogin.GetUserInfo(paramUserName);
+
+           if (RetuenValue.Length > 0)
+           {
+               IsCheckUser = true;//说明用户存在
+           }
+
+           return IsCheckUser;
+       }
+
+       /// <summary>
+       /// 判断密码是否一致
+       /// </summary>
+       /// <param name="paramUserName"></param>
+       /// <param name="paramPwd"></param>
+       /// <returns></returns>
+       public bool IsCheckPwd(string paramUserName, string paramPwd)
+       {
+           bool IsCheckPwd = false;
+           string paramSelectPwd = string.Empty;
+           DataTable myDt = new DataTable();
+           myDt = myDALogin.GetUserData(paramUserName);
+           paramSelectPwd = myDt.Rows[0][1].ToString().Trim ();
+           if (paramPwd.Equals(paramSelectPwd))//输入密码肯查询胡是否一支
+           {
+               IsCheckPwd = true;//说明密码一样
+        
+           }
+
+           return IsCheckPwd;
+ 
+       }
+
+    }
+}
