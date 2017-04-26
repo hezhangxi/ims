@@ -17,11 +17,11 @@ namespace InventoryManagersystem.ProductManager
         string paramRemark = string.Empty;
         int paramUnitCode = 0;
      
-        bool isSystem = false;
+       
         public frmUnitModify()
         {
             InitializeComponent();
-            isSystem = true;
+           
         }
         public frmUnitModify(string paramUnitName,string paramRemark,int paramUnitCode)
         {
@@ -29,7 +29,7 @@ namespace InventoryManagersystem.ProductManager
             this.paramUnitName = paramUnitName;
             this.paramRemark = paramRemark;
             this.paramUnitCode = paramUnitCode;
-            isSystem = false;
+            
         }
 
         public void setInfo()
