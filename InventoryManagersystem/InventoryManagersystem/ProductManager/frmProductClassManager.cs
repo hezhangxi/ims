@@ -36,8 +36,9 @@ namespace InventoryManagersystem.ProductManager
 
         private void btnModify_Click(object sender, EventArgs e)
         {
-            DateTime dt = DateTime.Now;
-            MessageBox.Show(dt.AddDays(-7).ToString("yyyy-MM-dd HH:mm:ss"));
+           // DateTime dt = DateTime.Now;
+            //MessageBox.Show(dt.AddDays(-7).ToString("yyyy-MM-dd HH:mm:ss"));
+           // MessageBox.Show(dt.AddDays(0).ToString());
         }
     }
 }
