@@ -76,15 +76,13 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.刷新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolMenu1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.tlmHome = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmChangeUser = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsPanal = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cMsStatue = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsMMax = new System.Windows.Forms.ToolStripMenuItem();
@@ -98,8 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.tsPanal.SuspendLayout();
             this.panel1.SuspendLayout();
             this.cMsStatue.SuspendLayout();
             this.SuspendLayout();
@@ -157,7 +154,7 @@
             treeNode14,
             treeNode18,
             treeNode21});
-            this.treeView1.Size = new System.Drawing.Size(224, 309);
+            this.treeView1.Size = new System.Drawing.Size(185, 495);
             this.treeView1.TabIndex = 0;
             this.treeView1.DoubleClick += new System.EventHandler(this.treeView1_DoubleClick);
             // 
@@ -197,7 +194,7 @@
             this.MainTabControl.Location = new System.Drawing.Point(0, 0);
             this.MainTabControl.Name = "MainTabControl";
             this.MainTabControl.SelectedIndex = 0;
-            this.MainTabControl.Size = new System.Drawing.Size(642, 495);
+            this.MainTabControl.Size = new System.Drawing.Size(681, 495);
             this.MainTabControl.TabIndex = 3;
             this.MainTabControl.DoubleClick += new System.EventHandler(this.MainTabControl_DoubleClick);
             // 
@@ -208,7 +205,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(634, 469);
+            this.tabPage1.Size = new System.Drawing.Size(673, 469);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "首页";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -225,12 +222,6 @@
             this.刷新ToolStripMenuItem.Name = "刷新ToolStripMenuItem";
             this.刷新ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.刷新ToolStripMenuItem.Text = "刷新";
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(0, 2);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 0;
             // 
             // panel4
             // 
@@ -264,52 +255,46 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolMenu1,
-            this.关于ToolStripMenuItem});
+            this.tlmHome,
+            this.tsmChangeUser});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(866, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // toolMenu1
+            // tlmHome
             // 
-            this.toolMenu1.Name = "toolMenu1";
-            this.toolMenu1.Size = new System.Drawing.Size(44, 21);
-            this.toolMenu1.Text = "菜单";
+            this.tlmHome.Image = ((System.Drawing.Image)(resources.GetObject("tlmHome.Image")));
+            this.tlmHome.Name = "tlmHome";
+            this.tlmHome.Size = new System.Drawing.Size(60, 21);
+            this.tlmHome.Text = "菜单";
+            this.tlmHome.Click += new System.EventHandler(this.tlmHome_Click);
             // 
-            // 关于ToolStripMenuItem
+            // tsmChangeUser
             // 
-            this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
-            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.关于ToolStripMenuItem.Text = "关于";
+            this.tsmChangeUser.Image = ((System.Drawing.Image)(resources.GetObject("tsmChangeUser.Image")));
+            this.tsmChangeUser.Name = "tsmChangeUser";
+            this.tsmChangeUser.Size = new System.Drawing.Size(84, 21);
+            this.tsmChangeUser.Text = "切换用户";
+            this.tsmChangeUser.Click += new System.EventHandler(this.tsmChangeUser_Click);
             // 
-            // panel6
+            // tsPanal
             // 
-            this.panel6.Controls.Add(this.treeView1);
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel6.Location = new System.Drawing.Point(0, 82);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(224, 495);
-            this.panel6.TabIndex = 6;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.monthCalendar1);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(0, 309);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(224, 186);
-            this.panel7.TabIndex = 0;
+            this.tsPanal.Controls.Add(this.treeView1);
+            this.tsPanal.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tsPanal.Location = new System.Drawing.Point(0, 82);
+            this.tsPanal.Name = "tsPanal";
+            this.tsPanal.Size = new System.Drawing.Size(185, 495);
+            this.tsPanal.TabIndex = 6;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.MainTabControl);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(224, 82);
+            this.panel1.Location = new System.Drawing.Point(185, 82);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(642, 495);
+            this.panel1.Size = new System.Drawing.Size(681, 495);
             this.panel1.TabIndex = 7;
             // 
             // cMsStatue
@@ -319,26 +304,26 @@
             this.TsMMin,
             this.TsmClose});
             this.cMsStatue.Name = "cMsStatue";
-            this.cMsStatue.Size = new System.Drawing.Size(153, 92);
+            this.cMsStatue.Size = new System.Drawing.Size(113, 70);
             // 
             // tsMMax
             // 
             this.tsMMax.Name = "tsMMax";
-            this.tsMMax.Size = new System.Drawing.Size(152, 22);
+            this.tsMMax.Size = new System.Drawing.Size(112, 22);
             this.tsMMax.Text = "最大化";
             this.tsMMax.Click += new System.EventHandler(this.tsMMax_Click);
             // 
             // TsMMin
             // 
             this.TsMMin.Name = "TsMMin";
-            this.TsMMin.Size = new System.Drawing.Size(152, 22);
+            this.TsMMin.Size = new System.Drawing.Size(112, 22);
             this.TsMMin.Text = "最小化";
             this.TsMMin.Click += new System.EventHandler(this.TsMMin_Click);
             // 
             // TsmClose
             // 
             this.TsmClose.Name = "TsmClose";
-            this.TsmClose.Size = new System.Drawing.Size(152, 22);
+            this.TsmClose.Size = new System.Drawing.Size(112, 22);
             this.TsmClose.Text = "关闭";
             this.TsmClose.Click += new System.EventHandler(this.TsmClose_Click);
             // 
@@ -358,7 +343,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(866, 599);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.tsPanal);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.statusStrip1);
@@ -379,8 +364,7 @@
             this.panel5.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
+            this.tsPanal.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.cMsStatue.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -395,18 +379,16 @@
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.TabControl MainTabControl;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel tsPanal;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ToolStripMenuItem toolMenu1;
-        private System.Windows.Forms.ToolStripMenuItem 关于ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tlmHome;
+        private System.Windows.Forms.ToolStripMenuItem tsmChangeUser;
         private System.Windows.Forms.ContextMenuStrip cMsStatue;
         private System.Windows.Forms.ToolStripMenuItem tsMMax;
         private System.Windows.Forms.ToolStripMenuItem TsMMin;

@@ -51,6 +51,7 @@
             this.textBoxPwd.Size = new System.Drawing.Size(257, 30);
             this.textBoxPwd.TabIndex = 2;
             this.textBoxPwd.UseSystemPasswordChar = true;
+            this.textBoxPwd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxPwd_KeyDown);
             // 
             // btnLogin
             // 

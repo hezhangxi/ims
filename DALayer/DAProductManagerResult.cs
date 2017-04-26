@@ -29,6 +29,29 @@ namespace DALayer
 
         }
 
+        public DataTable GetProductClassTable(string paramProductClassName,string paramProductClassCode)
+        {
+            DataTable MyTable = new DataTable();
+            DataSet MyDs = new DataSet();
+            string strSql = "select ProductClassID,ProductClassName,CreateDate,EmployeeID,Remark from ProductClass where 1=1";
+            if (paramProductClassName.Length == 0 && paramProductClassCode.Length == 0 )
+            {
+                strSql = "select ProductClassID,ProductClassName,CreateDate,EmployeeID,Remark from ProductClass";
+            }
+            if (paramProductClassName.Length >0)
+            {
+                strSql += "and ProductClassName = '" + paramProductClassName + "'";
+            }
+            if (paramProductClassCode.Length >0)
+            {
+                strSql += "and ProductClassID = '" + paramProductClassCode + "'";
+            }
+
+            MyDs = MySqlConn.Query(strSql);
+            MyTable = MyDs.Tables[0];
+            return MyTable;
+        }
+
         public bool CheckUnitName(string paramUnitName)
         {
             bool myResult = false;
@@ -71,6 +94,8 @@ namespace DALayer
 
             return returnValue;
         }
+
+
 
     }
 }

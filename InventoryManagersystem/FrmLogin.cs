@@ -113,5 +113,13 @@ namespace InventoryManagersystem
        {
            this.WindowState = FormWindowState.Minimized;
        }
+
+       private void textBoxPwd_KeyDown(object sender, KeyEventArgs e)
+       {
+           if (e.KeyCode == Keys.Enter)
+           {
+               btnLogin_Click(sender, e);
+           }
+       }
     }
 }

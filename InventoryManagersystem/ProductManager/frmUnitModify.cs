@@ -41,11 +41,7 @@ namespace InventoryManagersystem.ProductManager
 
         private void frmUnitModify_Load(object sender, EventArgs e)
         {
-            if (isSystem)
-            {
-                this.paramUnitName = this.Tag.ToString();
-
-            }
+            
             setInfo();
         }
 

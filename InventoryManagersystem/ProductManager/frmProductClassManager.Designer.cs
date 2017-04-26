@@ -36,16 +36,16 @@
             this.brnSearch = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnModify = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnModify = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -91,6 +91,7 @@
             this.brnSearch.Text = "查询";
             this.brnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.brnSearch.UseVisualStyleBackColor = true;
+            this.brnSearch.Click += new System.EventHandler(this.brnSearch_Click);
             // 
             // groupBox1
             // 
@@ -116,6 +117,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "数据";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 17);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(566, 244);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(103, 31);
@@ -138,24 +155,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "操作";
             // 
-            // btnDel
-            // 
-            this.btnDel.Location = new System.Drawing.Point(201, 31);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 23);
-            this.btnDel.TabIndex = 2;
-            this.btnDel.Text = "- 删除";
-            this.btnDel.UseVisualStyleBackColor = true;
-            // 
-            // btnModify
-            // 
-            this.btnModify.Location = new System.Drawing.Point(296, 31);
-            this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(75, 23);
-            this.btnModify.TabIndex = 2;
-            this.btnModify.Text = "修改";
-            this.btnModify.UseVisualStyleBackColor = true;
-            // 
             // btnExit
             // 
             this.btnExit.Location = new System.Drawing.Point(396, 31);
@@ -165,16 +164,24 @@
             this.btnExit.Text = "退出";
             this.btnExit.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // btnModify
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 17);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(566, 244);
-            this.dataGridView1.TabIndex = 0;
+            this.btnModify.Location = new System.Drawing.Point(296, 31);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(75, 23);
+            this.btnModify.TabIndex = 2;
+            this.btnModify.Text = "修改";
+            this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.Location = new System.Drawing.Point(201, 31);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(75, 23);
+            this.btnDel.TabIndex = 2;
+            this.btnDel.Text = "- 删除";
+            this.btnDel.UseVisualStyleBackColor = true;
             // 
             // frmProductClassManager
             // 
@@ -190,8 +197,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -228,6 +228,10 @@
     </Compile>
     <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="images\Desktop_.ini" />
+    <None Include="images\myglyphs.icl" />
+    <None Include="images\Thumbs.db" />
+    <None Include="images\vssver2.scc" />
     <None Include="InventoryManagersystem_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -273,6 +277,47 @@
   <ItemGroup>
     <Content Include="128128.ico" />
     <Content Include="9696.ico" />
+    <Content Include="images\add.ICO" />
+    <Content Include="images\attachment.ICO" />
+    <Content Include="images\BackGround04.jpg" />
+    <Content Include="images\Blob.ICO" />
+    <Content Include="images\cancel.ICO" />
+    <Content Include="images\carbon.ICO" />
+    <Content Include="images\caution.ICO" />
+    <Content Include="images\chart.ICO" />
+    <Content Include="images\clock.ICO" />
+    <Content Include="images\computer.ICO" />
+    <Content Include="images\convert.ICO" />
+    <Content Include="images\copy.ICO" />
+    <Content Include="images\Find.ICO" />
+    <Content Include="images\Floppy.ICO" />
+    <Content Include="images\Gel.ICO" />
+    <Content Include="images\Graph.ICO" />
+    <Content Include="images\haerdrive.ICO" />
+    <Content Include="images\Help.ICO" />
+    <Content Include="images\Home.ICO" />
+    <Content Include="images\iBook1.ico" />
+    <Content Include="images\iBook2.ico" />
+    <Content Include="images\iBook3.ico" />
+    <Content Include="images\iBook4.ico" />
+    <Content Include="images\Key.ico" />
+    <Content Include="images\Layers.ICO" />
+    <Content Include="images\Lemon.ICO" />
+    <Content Include="images\Lime.ICO" />
+    <Content Include="images\Lock.ICO" />
+    <Content Include="images\Mail.ICO" />
+    <Content Include="images\Mony.ICO" />
+    <Content Include="images\Notepad.ICO" />
+    <Content Include="images\Open.ICO" />
+    <Content Include="images\Pencil.ICO" />
+    <Content Include="images\Phone.ICO" />
+    <Content Include="images\Picture.ICO" />
+    <Content Include="images\Program Group.ICO" />
+    <Content Include="images\Save.ICO" />
+    <Content Include="images\speadsheet.ICO" />
+    <Content Include="images\Stop.ICO" />
+    <Content Include="images\Sun.ico" />
+    <Content Include="images\Unlock.ICO" />
     <Content Include="logoico.ico" />
     <Content Include="pro.ico" />
   </ItemGroup>

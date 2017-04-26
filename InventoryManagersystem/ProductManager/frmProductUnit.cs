@@ -92,6 +92,7 @@ namespace InventoryManagersystem.ProductManager
            // BUCheckResult myBUCheckResult =  new BUCheckResult();
 
             this.dataGridView1.DataSource = myBUProductManagerResult.GetMyDt("");
+            MessageBox.Show(this .Tag.ToString ());
         }
 
         private void btnModifyProduct_Click(object sender, EventArgs e)
@@ -108,6 +109,7 @@ namespace InventoryManagersystem.ProductManager
             int paramUnitCode = Convert.ToInt32( this.dataGridView1.SelectedRows[0].Cells["ProductUnitID"].Value);
 
             frmUnitModify MyFrmUnitModify = new frmUnitModify(paramUnitName,paramRemark,paramUnitCode);
+            MyFrmUnitModify.Tag = this.Tag;
             DialogResult dr = MyFrmUnitModify.ShowDialog();
             if (dr == DialogResult.OK)
             {

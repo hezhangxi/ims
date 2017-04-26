@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManagersystem", "InventoryManagersystem\InventoryManagersystem.csproj", "{BFD3CF84-4443-45F5-8696-66E07D067396}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BULayer", "BULayer\BULayer.csproj", "{DC73D489-56E9-4E3C-8B3A-BF051FDDFEF1}"

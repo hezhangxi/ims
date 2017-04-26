@@ -189,5 +189,20 @@ namespace InventoryManagersystem
             Application.Exit();
         }
 
+        private void tlmHome_Click(object sender, EventArgs e)
+        {
+            if (this.tsPanal.Width == 185)
+                this.tsPanal.Width = 0;
+            else
+                this.tsPanal.Width = 185;
+        }
+
+        private void tsmChangeUser_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            FrmLogin myfrmLogin = new FrmLogin();
+            myfrmLogin.ShowDialog();
+        }
+
     }
 }
