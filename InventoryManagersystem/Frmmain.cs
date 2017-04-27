@@ -6,12 +6,18 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using BULayer;
+using InventoryManagersystem.sys;
 
 namespace InventoryManagersystem
 {
     public partial class Frmmain : Form
     {
         public string paramUserName = string.Empty;
+        BUSysInfo myBUSysInfo = new BUSysInfo();
+        BULogin myBULogin = new BULogin();
+        int paramRole = 0;                  //当前用户的角色
+        string paramRoleName = string.Empty; //当前用户的角色名称
         public Frmmain()
         {
             InitializeComponent();
@@ -20,6 +26,7 @@ namespace InventoryManagersystem
         {
             InitializeComponent();
             this.paramUserName = paramUserName;
+            GetUserInfo();
         }
 
         #region public void SetTag(string paramFromName, string paramFromPath) 通过窗体名称以及窗体路径打开窗体
@@ -82,51 +89,63 @@ namespace InventoryManagersystem
 
         private void treeView1_DoubleClick(object sender, EventArgs e)
         {
-
             string paramFromName = string.Empty;
             string paramFromPath = string.Empty;
             paramFromName = treeView1.SelectedNode.Text;
-
-            switch (paramFromName)
+            paramFromPath = treeView1.SelectedNode.Tag.ToString();
+            if (paramFromPath.Length > 0)
             {
-                case "人员管理":
+                if (paramFromName == "权限设置")
+                {
+                    frmPermissionManage myfrmPermissionManage = new frmPermissionManage();
+                    myfrmPermissionManage.ShowDialog();
+                    return;
+                }
+                SetTag(paramFromName, paramFromPath);
+            }
 
-                    paramFromPath = "InventoryManagersystem.frmUserMamager";
-                    SetTag(paramFromName, paramFromPath);
-                    break;
+           
 
-                case "更改密码":
+            //switch (paramFromName)
+            //{
+            //    case "人员管理":
 
-                    paramFromPath = "InventoryManagersystem.frmChangeMyPassword";
-                    SetTag(paramFromName, paramFromPath);
-                    break;
+            //        paramFromPath = "InventoryManagersystem.frmUserMamager";
+            //        SetTag(paramFromName, paramFromPath);
+            //        break;
 
-                case "商品维护":
-                    paramFromPath = "InventoryManagersystem.ProductManager.frmProductList";
-                    SetTag(paramFromName, paramFromPath);
-                    break;
+            //    case "更改密码":
 
-                case "商品分类":
-                    paramFromPath = "InventoryManagersystem.ProductManager.frmProductClassManager";
-                    SetTag(paramFromName, paramFromPath);
-                    break;
+            //        paramFromPath = "InventoryManagersystem.frmChangeMyPassword";
+            //        SetTag(paramFromName, paramFromPath);
+            //        break;
 
-                case "商品单位":
-                    paramFromPath = "InventoryManagersystem.ProductManager.frmProductUnit";
-                    SetTag(paramFromName, paramFromPath);
-                    break;
+            //    case "商品维护":
+            //        paramFromPath = "InventoryManagersystem.ProductManager.frmProductList";
+            //        SetTag(paramFromName, paramFromPath);
+            //        break;
 
-                case "修改我的资料":
+            //    case "商品分类":
+            //        paramFromPath = "InventoryManagersystem.ProductManager.frmProductClassManager";
+            //        SetTag(paramFromName, paramFromPath);
+            //        break;
 
-                    paramFromPath = "InventoryManagersystem.frmModifyUser";
-                    SetTag(paramFromName, paramFromPath);
-                    break;
+            //    case "商品单位":
+            //        paramFromPath = "InventoryManagersystem.ProductManager.frmProductUnit";
+            //        SetTag(paramFromName, paramFromPath);
+            //        break;
+
+            //    case "修改我的资料":
+
+            //        paramFromPath = "InventoryManagersystem.frmModifyUser";
+            //        SetTag(paramFromName, paramFromPath);
+            //        break;
 
        
 
-                default:
-                    break;
-            }
+            //    default:
+            //        break;
+            //}
             
             //if (treeView1.SelectedNode.Text == "人员管理")
             //{
@@ -135,7 +154,81 @@ namespace InventoryManagersystem
             //}
 
         }
-  
+        public void GetUserInfo()
+        {
+            DataTable myDt = new DataTable();
+            myDt = myBULogin.GetUserData(paramUserName);
+            paramRole = Convert.ToInt32(myDt.Rows[0]["RoleID"]);
+        }
+
+        #region   TreeView的数据绑定父\子、孙节点函数
+        /// <summary>
+        /// TreeView的数据绑定父节点函数
+        /// </summary>
+        /// <param name="treeview">TreeView控件ID名称</param>
+        /// <param name="text">树控件要显示的文本的字段名称</param>
+        public void Bind_TreeView(TreeView treeview)
+        {
+            DataTable mtDt = new DataTable();
+
+            // mtDt = myBUSysInfo.GetSysInfo();  //测试注销
+            mtDt = myBULogin.GetModuleList(paramRole);
+            treeview.Nodes.Clear();
+            for (int i = 0; i < mtDt.Rows.Count; i++)
+            {
+                TreeNode rootnode = new TreeNode();//创建根节点
+                //rootnode.Text = mtDt.Rows[i]["SysName"].ToString(); //测试注销
+                //string paramSysID = mtDt.Rows[i]["SysNameID"].ToString();
+                rootnode.Text = mtDt.Rows[i]["ModuleName"].ToString();
+                string paramSysID = mtDt.Rows[i]["ID"].ToString();
+                treeview.Nodes.Add(rootnode);//在添加完节点的内容之后，当然要添加根节点，
+                CreateChildNodes(rootnode, paramSysID, rootnode.Text);//
+            }
+        }
+        /// <summary>
+        /// TreeView的数据绑定子节点函数
+        /// </summary>
+        /// <param name="treenode">上一级节点</param>
+        /// <param name="parentName">数据表中字段名</param>
+        /// <param name="text">树控件要显示的文本的字段名称</param>
+        /// <param name="index">查询语句关键字</param>
+        public void CreateChildNodes(TreeNode treenode, string parentSysID, string text)
+        {
+
+
+            //DataTable myCNode = myBUSysInfo.GetSysModuleInfo(parentSysID);
+            DataTable myCNode = myBULogin.GetChildModuleList(paramRole, parentSysID);
+
+            for (int i = 0; i < myCNode.Rows.Count; i++)
+            {
+                TreeNode childnode = new TreeNode();
+                childnode.Text = myCNode.Rows[i]["ModuleName"].ToString();
+                childnode.Tag = myCNode.Rows[i]["FormName"].ToString();
+
+                treenode.Nodes.Add(childnode);
+                //  string paramSysModelID = myCNode.Rows[i]["SysModelID"].ToString();
+                // CreateGrandsonNodes(childnode, paramSysModelID, childnode.Text);
+            }
+        }
+        /// <summary>
+        /// TreeView的数据绑定三级节点函数
+        /// </summary>
+        /// <param name="treenode">上一级节点</param>
+        /// <param name="parentName">数据表中字段名</param>
+        /// <param name="text">树控件要显示的文本的字段名称</param>
+        /// <param name="index">查询语句关键字</param>
+        public void CreateGrandsonNodes(TreeNode treenode, string paramSysModelID, string text)
+        {
+            DataTable myDt = myBUSysInfo.Get_SysChildNode(paramSysModelID);
+            for (int i = 0; i < myDt.Rows.Count; i++)
+            {
+                TreeNode childnode = new TreeNode();
+                childnode.Text = myDt.Rows[i]["SysChildNodeName"].ToString();
+                childnode.Tag = myDt.Rows[i]["SysChildNodePath"].ToString();
+                treenode.Nodes.Add(childnode);
+            }
+        }
+        #endregion
         private void Frmmain_Load(object sender, EventArgs e)
         {
             string paramFromName = string.Empty;
@@ -146,7 +239,8 @@ namespace InventoryManagersystem
            // SetTag("首页2", paramFromPath);
             #endregion
            //end
-
+            Bind_TreeView(treeView1);
+        
             treeView1.ExpandAll();//树节点展开
             SetStatusStrip();
 

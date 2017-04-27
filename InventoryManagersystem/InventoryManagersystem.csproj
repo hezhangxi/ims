@@ -78,6 +78,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassAssist\CommonOperator.cs" />
+    <Compile Include="ClassAssist\INIOperator.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +133,36 @@
     </Compile>
     <Compile Include="ProductManager\frmUnitModify.Designer.cs">
       <DependentUpon>frmUnitModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sys\frmClosing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sys\frmClosing.Designer.cs">
+      <DependentUpon>frmClosing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sys\frmModuleAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sys\frmModuleAdd.Designer.cs">
+      <DependentUpon>frmModuleAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sys\frmModuleInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sys\frmModuleInfo.Designer.cs">
+      <DependentUpon>frmModuleInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sys\frmPermissionManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sys\frmPermissionManage.Designer.cs">
+      <DependentUpon>frmPermissionManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sys\frmRoleInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sys\frmRoleInfo.Designer.cs">
+      <DependentUpon>frmRoleInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="UserManager\frmAddUser.cs">
       <SubType>Form</SubType>
@@ -199,6 +231,21 @@
     <EmbeddedResource Include="ProductManager\frmUnitModify.resx">
       <DependentUpon>frmUnitModify.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="sys\frmClosing.resx">
+      <DependentUpon>frmClosing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sys\frmModuleAdd.resx">
+      <DependentUpon>frmModuleAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sys\frmModuleInfo.resx">
+      <DependentUpon>frmModuleInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sys\frmPermissionManage.resx">
+      <DependentUpon>frmPermissionManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sys\frmRoleInfo.resx">
+      <DependentUpon>frmRoleInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserManager\frmAddUser.resx">
       <DependentUpon>frmAddUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,6 +297,10 @@
     <ProjectReference Include="..\BULayer\BULayer.csproj">
       <Project>{DC73D489-56E9-4E3C-8B3A-BF051FDDFEF1}</Project>
       <Name>BULayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{F5984714-F5A8-47C2-90FF-B545D3C2D092}</Project>
+      <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

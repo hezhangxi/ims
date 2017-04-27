@@ -40,5 +40,36 @@ namespace DALayer
            myDt = myDs.Tables[0];
            return myDt;
        }
+
+   
+       /// <summary>
+       /// 通过角色获取到模块值
+       /// </summary>
+       /// <param name="paramRoleID"></param>
+       /// <returns></returns>
+       public DataTable GetModuleList(int paramRoleID)
+       {
+           DataTable myDt = new DataTable();
+           SQL = @" SELECT * FROM T_Module  left join T_Role on  T_Role.MODULEID=T_Module.ID where  ROLEID='" + paramRoleID + "' and  Enable='true' and  parentID=0 ";
+           DataSet myDs = new DataSet();
+           myDs = mySqlconn.Query(SQL);
+           myDt = myDs.Tables[0];
+           return myDt;
+       }
+
+       /// <summary>
+       /// 子节点信息
+       /// </summary>
+       /// <param name="paramRoleID"></param>
+       /// <returns></returns>
+       public DataTable GetChildModuleList(int paramRoleID, string paramFatherMID)
+       {
+           DataTable myDt = new DataTable();
+           SQL = @" SELECT * FROM T_Module  left join T_Role on  T_Role.MODULEID=T_Module.ID where  ROLEID='" + paramRoleID + "' and  Enable='true' and   ParentID='" + paramFatherMID + "' ";
+           DataSet myDs = new DataSet();
+           myDs = mySqlconn.Query(SQL);
+           myDt = myDs.Tables[0];
+           return myDt;
+       }
     }
 }

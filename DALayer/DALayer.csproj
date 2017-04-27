@@ -40,13 +40,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAIRoleInfo.cs" />
+    <Compile Include="DALModelInfo.cs" />
     <Compile Include="DAManagerUser.cs" />
     <Compile Include="DALogin.cs" />
     <Compile Include="DAQueryGrid.cs" />
     <Compile Include="DAProductManagerResult.cs" />
+    <Compile Include="DASysInfo.cs" />
     <Compile Include="DAUnitAdd.cs" />
     <Compile Include="Sqlconn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{F5984714-F5A8-47C2-90FF-B545D3C2D092}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

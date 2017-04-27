@@ -50,6 +50,32 @@ namespace BULayer
            return IsCheckPwd;
  
        }
-
+       /// <summary>
+       /// 通过已有的用户 获取用户表信息
+       /// </summary>
+       /// <param name="paramUserName"></param>
+       /// <returns></returns>
+       public DataTable GetUserData(string paramUserName)
+       {
+           return myDALogin.GetUserData(paramUserName);
+       }
+       /// <summary>
+       /// 通过角色获取到模块值
+       /// </summary>
+       /// <param name="paramRoleID"></param>
+       /// <returns></returns>
+       public DataTable GetModuleList(int paramRoleID)
+       {
+           return myDALogin.GetModuleList(paramRoleID);
+       }
+       /// <summary>
+       /// 子节点信息
+       /// </summary>
+       /// <param name="paramRoleID"></param>
+       /// <returns></returns>
+       public DataTable GetChildModuleList(int paramRoleID, string paramFatherMID)
+       {
+           return myDALogin.GetChildModuleList(paramRoleID, paramFatherMID);
+       }
     }
 }

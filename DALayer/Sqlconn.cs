@@ -80,7 +80,6 @@ namespace DALayer
             }
         }
 
-
         public int ExeNonQuery(string SQLString)
         {
             using (SqlConnection connection = new SqlConnection(strConn))
@@ -102,9 +101,6 @@ namespace DALayer
             }
         }
 
-
-
-
         public int ReturnRowsLine(string SQLString)
         {
             using (SqlConnection connection = new SqlConnection(strConn))
@@ -122,6 +118,233 @@ namespace DALayer
                         throw e;
                     }
                 }
+            }
+        }
+
+
+        /// <summary>
+        /// 执行SQL语句，返回影响的记录数
+        /// </summary>
+        /// <param name="SQLString">SQL语句</param>
+        /// <returns>影响的记录数</returns>
+        public int ExecuteNonQuery(string SQLString)
+        {
+            using (SqlConnection connection = new SqlConnection(strConn))
+            {
+                using (SqlCommand cmd = new SqlCommand(SQLString, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        int rows = cmd.ExecuteNonQuery();
+                        return rows;
+                    }
+                    catch (System.Data.SqlClient.SqlException e)
+                    {
+                        connection.Close();
+                        throw e;
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// 执行查询语句，返回DataSet
+        /// </summary>
+        /// <param name="SQLString">查询语句</param>
+        /// <returns>DataSet</returns>
+        public DataSet Query(string SQLString, params SqlParameter[] cmdParms)
+        {
+            using (SqlConnection connection = new SqlConnection(strConn))
+            {
+                SqlCommand cmd = new SqlCommand();
+                PrepareCommand(cmd, connection, null, SQLString, cmdParms);
+                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                {
+                    DataSet ds = new DataSet();
+                    try
+                    {
+                        da.Fill(ds, "ds");
+                        cmd.Parameters.Clear();
+                    }
+                    catch (System.Data.SqlClient.SqlException ex)
+                    {
+                        throw new Exception(ex.Message);
+                    }
+                    return ds;
+                }
+            }
+        }
+
+
+
+        public int GetMaxID(string FieldName, string TableName)
+        {
+            string strsql = "select max(" + FieldName + ")+1 from " + TableName;
+            object obj = GetSingle(strsql);
+            if (obj == null)
+            {
+                return 1;
+            }
+            else
+            {
+                return int.Parse(obj.ToString());
+            }
+        }
+        /// <summary>
+        /// 执行一条计算查询结果语句，返回查询结果（object）。
+        /// </summary>
+        /// <param name="SQLString">计算查询结果语句</param>
+        /// <returns>查询结果（object）</returns>
+        public object GetSingle(string SQLString)
+        {
+            using (SqlConnection connection = new SqlConnection(strConn))
+            {
+                using (SqlCommand cmd = new SqlCommand(SQLString, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        object obj = cmd.ExecuteScalar();
+                        if ((Object.Equals(obj, null)) || (Object.Equals(obj, System.DBNull.Value)))
+                        {
+                            return null;
+                        }
+                        else
+                        {
+                            return obj;
+                        }
+                    }
+                    catch (System.Data.SqlClient.SqlException e)
+                    {
+                        connection.Close();
+                        throw e;
+                    }
+                }
+            }
+        }
+
+        public bool Exists(string strSql)
+        {
+            object obj = GetSingle(strSql);
+            int cmdresult;
+            if ((Object.Equals(obj, null)) || (Object.Equals(obj, System.DBNull.Value)))
+            {
+                cmdresult = 0;
+            }
+            else
+            {
+                cmdresult = int.Parse(obj.ToString()); //也可能=0
+            }
+            if (cmdresult == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        /// <summary>
+        /// 执行一条计算查询结果语句，返回查询结果（object）。
+        /// </summary>
+        /// <param name="SQLString">计算查询结果语句</param>
+        /// <returns>查询结果（object）</returns>
+        public object GetSingle(string SQLString, params SqlParameter[] cmdParms)
+        {
+            using (SqlConnection connection = new SqlConnection(strConn))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    try
+                    {
+                        PrepareCommand(cmd, connection, null, SQLString, cmdParms);
+                        object obj = cmd.ExecuteScalar();
+                        cmd.Parameters.Clear();
+                        if ((Object.Equals(obj, null)) || (Object.Equals(obj, System.DBNull.Value)))
+                        {
+                            return null;
+                        }
+                        else
+                        {
+                            return obj;
+                        }
+                    }
+                    catch (System.Data.SqlClient.SqlException e)
+                    {
+                        throw e;
+                    }
+                }
+            }
+        }
+        private void PrepareCommand(SqlCommand cmd, SqlConnection conn, SqlTransaction trans, string cmdText, SqlParameter[] cmdParms)
+        {
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
+            cmd.Connection = conn;
+            cmd.CommandText = cmdText;
+            if (trans != null)
+                cmd.Transaction = trans;
+            cmd.CommandType = CommandType.Text;//cmdType;
+            if (cmdParms != null)
+            {
+
+
+                foreach (SqlParameter parameter in cmdParms)
+                {
+                    if ((parameter.Direction == ParameterDirection.InputOutput || parameter.Direction == ParameterDirection.Input) &&
+                        (parameter.Value == null))
+                    {
+                        parameter.Value = DBNull.Value;
+                    }
+                    cmd.Parameters.Add(parameter);
+                }
+            }
+        }
+        /// <summary>
+        /// 执行SQL语句，返回影响的记录数
+        /// </summary>
+        /// <param name="SQLString">SQL语句</param>
+        /// <returns>影响的记录数</returns>
+        public int ExecuteSql(string SQLString, params SqlParameter[] cmdParms)
+        {
+            using (SqlConnection connection = new SqlConnection(strConn))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    try
+                    {
+                        PrepareCommand(cmd, connection, null, SQLString, cmdParms);
+                        int rows = cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                        return rows;
+                    }
+                    catch (System.Data.SqlClient.SqlException e)
+                    {
+                        throw e;
+                    }
+                }
+            }
+        }
+
+        public bool Exists(string strSql, params SqlParameter[] cmdParms)
+        {
+            object obj = GetSingle(strSql, cmdParms);
+            int cmdresult;
+            if ((Object.Equals(obj, null)) || (Object.Equals(obj, System.DBNull.Value)))
+            {
+                cmdresult = 0;
+            }
+            else
+            {
+                cmdresult = int.Parse(obj.ToString());
+            }
+            if (cmdresult == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
     }
