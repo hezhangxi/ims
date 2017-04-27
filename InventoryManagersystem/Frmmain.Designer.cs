@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("人员管理");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("管理员");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("权限管理");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("系统管理", new System.Windows.Forms.TreeNode[] {
             treeNode1,
@@ -107,7 +107,7 @@
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
             treeNode1.Name = "nameUserNode";
-            treeNode1.Text = "人员管理";
+            treeNode1.Text = "管理员";
             treeNode2.Name = "nameRoles";
             treeNode2.Text = "权限管理";
             treeNode3.Name = "systemManager";
