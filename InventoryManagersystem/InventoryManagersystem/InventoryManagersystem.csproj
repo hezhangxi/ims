@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BFD3CF84-4443-45F5-8696-66E07D067396}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InventoryManagersystem</RootNamespace>
+    <AssemblyName>InventoryManagersystem</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Administrator\Desktop\myInventory\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>05D4F518DC5C7243BDAE9FFEFFABC88073D6C068</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>InventoryManagersystem_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>128128.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAboutBox.Designer.cs">
+      <DependentUpon>frmAboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProductClassAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductClassAdd.Designer.cs">
+      <DependentUpon>frmProductClassAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManager\frmProductAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductManager\frmProductAdd.Designer.cs">
+      <DependentUpon>frmProductAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManager\frmProductClassManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductManager\frmProductClassManager.Designer.cs">
+      <DependentUpon>frmProductClassManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManager\frmProductList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductManager\frmProductList.Designer.cs">
+      <DependentUpon>frmProductList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManager\frmProductUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductManager\frmProductUnit.Designer.cs">
+      <DependentUpon>frmProductUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManager\frmProductUnitAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductManager\frmProductUnitAdd.Designer.cs">
+      <DependentUpon>frmProductUnitAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManager\frmUnitModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductManager\frmUnitModify.Designer.cs">
+      <DependentUpon>frmUnitModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserManager\frmAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManager\frmAddUser.Designer.cs">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserManager\frmChangeMyPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManager\frmChangeMyPassword.Designer.cs">
+      <DependentUpon>frmChangeMyPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frmmain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmmain.Designer.cs">
+      <DependentUpon>Frmmain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserManager\frmModifyUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManager\frmModifyUser.Designer.cs">
+      <DependentUpon>frmModifyUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserManager\frmMyPassword.cs" />
+    <Compile Include="UserManager\frmUserMamager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManager\frmUserMamager.Designer.cs">
+      <DependentUpon>frmUserMamager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sqlconn.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAboutBox.resx">
+      <DependentUpon>frmAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProductClassAdd.resx">
+      <DependentUpon>frmProductClassAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductManager\frmProductAdd.resx">
+      <DependentUpon>frmProductAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductManager\frmProductClassManager.resx">
+      <DependentUpon>frmProductClassManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductManager\frmProductList.resx">
+      <DependentUpon>frmProductList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductManager\frmProductUnit.resx">
+      <DependentUpon>frmProductUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductManager\frmProductUnitAdd.resx">
+      <DependentUpon>frmProductUnitAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductManager\frmUnitModify.resx">
+      <DependentUpon>frmUnitModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManager\frmAddUser.resx">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManager\frmChangeMyPassword.resx">
+      <DependentUpon>frmChangeMyPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmmain.resx">
+      <DependentUpon>Frmmain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManager\frmModifyUser.resx">
+      <DependentUpon>frmModifyUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManager\frmUserMamager.resx">
+      <DependentUpon>frmUserMamager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="images\Desktop_.ini" />
+    <None Include="images\myglyphs.icl" />
+    <None Include="images\Thumbs.db" />
+    <None Include="images\vssver2.scc" />
+    <None Include="InventoryManagersystem_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BULayer\BULayer.csproj">
+      <Project>{DC73D489-56E9-4E3C-8B3A-BF051FDDFEF1}</Project>
+      <Name>BULayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="128128.ico" />
+    <Content Include="9696.ico" />
+    <Content Include="images\add.ICO" />
+    <Content Include="images\attachment.ICO" />
+    <Content Include="images\BackGround04.jpg" />
+    <Content Include="images\Blob.ICO" />
+    <Content Include="images\cancel.ICO" />
+    <Content Include="images\carbon.ICO" />
+    <Content Include="images\caution.ICO" />
+    <Content Include="images\chart.ICO" />
+    <Content Include="images\clock.ICO" />
+    <Content Include="images\computer.ICO" />
+    <Content Include="images\convert.ICO" />
+    <Content Include="images\copy.ICO" />
+    <Content Include="images\Find.ICO" />
+    <Content Include="images\Floppy.ICO" />
+    <Content Include="images\Gel.ICO" />
+    <Content Include="images\Graph.ICO" />
+    <Content Include="images\haerdrive.ICO" />
+    <Content Include="images\Help.ICO" />
+    <Content Include="images\Home.ICO" />
+    <Content Include="images\iBook1.ico" />
+    <Content Include="images\iBook2.ico" />
+    <Content Include="images\iBook3.ico" />
+    <Content Include="images\iBook4.ico" />
+    <Content Include="images\Key.ico" />
+    <Content Include="images\Layers.ICO" />
+    <Content Include="images\Lemon.ICO" />
+    <Content Include="images\Lime.ICO" />
+    <Content Include="images\Lock.ICO" />
+    <Content Include="images\Mail.ICO" />
+    <Content Include="images\Mony.ICO" />
+    <Content Include="images\Notepad.ICO" />
+    <Content Include="images\Open.ICO" />
+    <Content Include="images\Pencil.ICO" />
+    <Content Include="images\Phone.ICO" />
+    <Content Include="images\Picture.ICO" />
+    <Content Include="images\Program Group.ICO" />
+    <Content Include="images\Save.ICO" />
+    <Content Include="images\speadsheet.ICO" />
+    <Content Include="images\Stop.ICO" />
+    <Content Include="images\Sun.ico" />
+    <Content Include="images\Unlock.ICO" />
+    <Content Include="logoico.ico" />
+    <Content Include="pro.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
