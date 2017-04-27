@@ -17,6 +17,7 @@ namespace InventoryManagersystem
         public string paramAddress = string.Empty;
         public string paramTelephone = string.Empty;
         public string paramEmail = string.Empty;
+        BUUserManager MyUserManager = new BUUserManager();
         bool IsSystem = false;
         public frmModifyUser()
         {
@@ -54,8 +55,18 @@ namespace InventoryManagersystem
              this.paramUserName = this.Tag.ToString();
             }
             SetInfo();
+            SetRolesComb();
         }
+        public void SetRolesComb()
+        {
+            BUUserManager MyUserManager = new BUUserManager();
+            DataTable rolesList = MyUserManager.GetRolesList();
+            comboBoxRoles.DataSource = rolesList;
+            comboBoxRoles.DisplayMember = "RoleName";
+            comboBoxRoles.ValueMember = "RoleID";
 
+            
+        }
         private void btnOk_Click(object sender, EventArgs e)
         {
             try
@@ -63,12 +74,15 @@ namespace InventoryManagersystem
 
 
                 string userName = this.txtBoxUser.Text.Trim();
-                //string passWord = this.txtBoxPwd.Text.Trim();
+                string passWord = this.txtBoxPwd.Text.Trim();
                 string telePhone = this.txtBoxPhone.Text.Trim();
                 string email = this.txtBoxEmail.Text.Trim();
                 string address = this.txtBoxAddress.Text.Trim();
+                string RoleName = this.comboBoxRoles.Text.Trim();
+                int RoleID = MyUserManager.GetRoleID(RoleName);
+                
                 BUCheckResult myBUCheckResult = new BUCheckResult();
-                int checkValue = myBUCheckResult.CheckUserModify(userName,telePhone, email, address);
+                int checkValue = myBUCheckResult.CheckUserModify(userName, telePhone, email, address, RoleID,passWord);
                 if (checkValue > 0)
                 {
                     MessageBox.Show("用户修改成功");
@@ -95,5 +109,6 @@ namespace InventoryManagersystem
         {
 
         }
+
     }
 }

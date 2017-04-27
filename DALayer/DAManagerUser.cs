@@ -10,6 +10,7 @@ namespace DALayer
 {
    public class DAManagerUser
     {
+       Sqlconn MySqlconn = new Sqlconn();
        public string GetUserPassword(string paramUserName)
        {
            Sqlconn mySqlconn = new Sqlconn();
@@ -35,5 +36,32 @@ namespace DALayer
 
            return returnValue;
        }
+       public DataTable GetRolesList()
+       {
+           string strSql = "select RoleID,RoleName from T_RoleInfo";
+           DataTable returnValue = MySqlconn.Query(strSql).Tables[0];
+
+           return returnValue;
+       }
+
+       public DataTable GetRole(string paramUserName)
+       {
+           DataTable myDt = new DataTable();
+           string strSql = "select T_RoleInfo.RoleName from T_RoleInfo,adminuser where T_RoleInfo.RoleID = adminuser.RoleID and adminuser.username='"+paramUserName+"'";
+           myDt = MySqlconn.Query(strSql).Tables[0];
+           return myDt;
+       }
+
+       public int GetRoleID(string paramRoleName)
+       { 
+           DataTable myDt = new DataTable();
+           string strSql = "select RoleID from T_RoleInfo where RoleName = '"+paramRoleName+"'";
+           myDt = MySqlconn.Query(strSql).Tables[0];
+           int returnValue = Convert.ToInt32(myDt.Rows[0][0]);
+           return returnValue;
+       }
+
     }
 }
+
+

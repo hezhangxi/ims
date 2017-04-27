@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnUserAdd = new System.Windows.Forms.Button();
             this.btnUserDel = new System.Windows.Forms.Button();
             this.btnUserMod = new System.Windows.Forms.Button();
@@ -45,6 +41,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -61,7 +62,8 @@
             this.Username,
             this.telephone,
             this.address,
-            this.email});
+            this.email,
+            this.Column1});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 17);
             this.dataGridView1.Name = "dataGridView1";
@@ -70,38 +72,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1067, 294);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // Username
-            // 
-            this.Username.DataPropertyName = "username";
-            this.Username.HeaderText = "用户名";
-            this.Username.Name = "Username";
-            this.Username.ReadOnly = true;
-            this.Username.Width = 152;
-            // 
-            // telephone
-            // 
-            this.telephone.DataPropertyName = "telephone";
-            this.telephone.HeaderText = "电话";
-            this.telephone.Name = "telephone";
-            this.telephone.ReadOnly = true;
-            this.telephone.Width = 152;
-            // 
-            // address
-            // 
-            this.address.DataPropertyName = "address";
-            this.address.HeaderText = "地址";
-            this.address.Name = "address";
-            this.address.ReadOnly = true;
-            this.address.Width = 152;
-            // 
-            // email
-            // 
-            this.email.DataPropertyName = "email";
-            this.email.HeaderText = "邮件地址";
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            this.email.Width = 153;
             // 
             // btnUserAdd
             // 
@@ -229,6 +199,45 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "数据";
             // 
+            // Username
+            // 
+            this.Username.DataPropertyName = "username";
+            this.Username.HeaderText = "用户名";
+            this.Username.Name = "Username";
+            this.Username.ReadOnly = true;
+            this.Username.Width = 152;
+            // 
+            // telephone
+            // 
+            this.telephone.DataPropertyName = "telephone";
+            this.telephone.HeaderText = "电话";
+            this.telephone.Name = "telephone";
+            this.telephone.ReadOnly = true;
+            this.telephone.Width = 152;
+            // 
+            // address
+            // 
+            this.address.DataPropertyName = "address";
+            this.address.HeaderText = "地址";
+            this.address.Name = "address";
+            this.address.ReadOnly = true;
+            this.address.Width = 152;
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "邮件地址";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            this.email.Width = 153;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "RoleID";
+            this.Column1.HeaderText = "角色";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
             // frmUserMamager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -262,12 +271,13 @@
         private System.Windows.Forms.TextBox txtBoxPhone;
         private System.Windows.Forms.Label lalPhone;
         private System.Windows.Forms.Button btnReflash;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username;
         private System.Windows.Forms.DataGridViewTextBoxColumn telephone;
         private System.Windows.Forms.DataGridViewTextBoxColumn address;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }

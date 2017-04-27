@@ -71,7 +71,7 @@ namespace DALayer
         {
             int ReturnValue = 0;
             string strSql = "delete  from ProductUnit where ProductUnitID = '" + ProductUnitID + "'";
-           //Sqlconn mySqlconn = new Sqlconn();
+            //Sqlconn mySqlconn = new Sqlconn();
 
             ReturnValue = MySqlConn.ExeNonQuery(strSql); ;
 
@@ -83,9 +83,10 @@ namespace DALayer
             {
                 return false;
             }
-
         }
+        
 
+      
         public int UpdateUnitReturnRowCount(string paramUnitName,string paramRemark,string paramUnitCode)
         {
             int returnValue = 0;

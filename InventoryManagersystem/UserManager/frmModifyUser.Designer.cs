@@ -40,6 +40,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBoxRoles = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtBoxEmail
@@ -51,10 +53,10 @@
             // 
             // txtBoxAddress
             // 
-            this.txtBoxAddress.Location = new System.Drawing.Point(65, 104);
+            this.txtBoxAddress.Location = new System.Drawing.Point(65, 152);
             this.txtBoxAddress.Multiline = true;
             this.txtBoxAddress.Name = "txtBoxAddress";
-            this.txtBoxAddress.Size = new System.Drawing.Size(285, 66);
+            this.txtBoxAddress.Size = new System.Drawing.Size(285, 42);
             this.txtBoxAddress.TabIndex = 11;
             // 
             // txtBoxPhone
@@ -66,7 +68,6 @@
             // 
             // txtBoxPwd
             // 
-            this.txtBoxPwd.Enabled = false;
             this.txtBoxPwd.Location = new System.Drawing.Point(250, 40);
             this.txtBoxPwd.Name = "txtBoxPwd";
             this.txtBoxPwd.Size = new System.Drawing.Size(100, 21);
@@ -93,7 +94,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 107);
+            this.label5.Location = new System.Drawing.Point(18, 155);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 12);
             this.label5.TabIndex = 4;
@@ -101,7 +102,7 @@
             // 
             // btnQuit
             // 
-            this.btnQuit.Location = new System.Drawing.Point(206, 200);
+            this.btnQuit.Location = new System.Drawing.Point(206, 211);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(75, 23);
             this.btnQuit.TabIndex = 8;
@@ -111,7 +112,7 @@
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(90, 200);
+            this.btnOk.Location = new System.Drawing.Point(90, 211);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 9;
@@ -146,11 +147,29 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "用户名";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(18, 116);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 12);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "角  色";
+            // 
+            // comboBoxRoles
+            // 
+            this.comboBoxRoles.FormattingEnabled = true;
+            this.comboBoxRoles.Location = new System.Drawing.Point(66, 116);
+            this.comboBoxRoles.Name = "comboBoxRoles";
+            this.comboBoxRoles.Size = new System.Drawing.Size(121, 20);
+            this.comboBoxRoles.TabIndex = 15;
+            // 
             // frmModifyUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(373, 255);
+            this.Controls.Add(this.comboBoxRoles);
             this.Controls.Add(this.txtBoxEmail);
             this.Controls.Add(this.txtBoxAddress);
             this.Controls.Add(this.txtBoxPhone);
@@ -160,6 +179,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.btnOk);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -186,5 +206,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBoxRoles;
     }
 }

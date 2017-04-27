@@ -21,7 +21,7 @@ namespace DALayer
        {
            DataTable myDt = new DataTable();
            string SQL = string.Empty;
-           SQL = "select username,telephone,email,address from adminuser  where 1=1";
+           SQL = "select username,telephone,email,address,RoleID from adminuser  where 1=1";
            if (paramUserName.Length > 0)
            {
                SQL += " and  userName ='" + paramUserName + "'";

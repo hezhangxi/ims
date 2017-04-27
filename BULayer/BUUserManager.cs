@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using DALayer;
+using System.Data;
 
 namespace BULayer
 {
     public class BUUserManager
     {
+        DAManagerUser dal = new DAManagerUser();
         public bool checkOldPassword (string paramUserName,string txtBoxPassword)
         {
             bool returnValue = false;
@@ -34,6 +36,26 @@ namespace BULayer
             return ReturnValue;
 
         }
+
+        public DataTable GetRolesList()
+        {
+            return dal.GetRolesList();
+        }
+
+        public string GetRole(string paramUsername)
+        {
+            string  returnValue = string.Empty;
+               returnValue = dal.GetRole(paramUsername).Rows[0][0].ToString();
+            return returnValue;
+
+        }
+        public int GetRoleID(string paramRoleName)
+        {
+            int returnValue = dal.GetRoleID(paramRoleName);
+            return returnValue;
+
+        }
+
 
     }
 }

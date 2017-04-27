@@ -25,10 +25,18 @@ values('"+paramUsename+" ','"+paramPasswd+"','"+paramTelephone+"','"+paramEmail+
             return ReturnValue;
 
         }
-        public int CheckUserModify(string paramUsename,string paramTelephone,string paramEmail,string paramAddress)
+        public int CheckUserModify(string paramUsename,string paramTelephone,string paramEmail,string paramAddress,int paramRoles,string paramPassword)
         {
+            string strSQL = string.Empty;
+            if (paramPassword.Length != 0)
+            {
+               strSQL = " update adminuser set telephone = '" + paramTelephone + "' ,[address] = '" + paramAddress + "',email = '" + paramEmail + "',RoleID = '" + paramRoles + "',passwd = '" + paramPassword + "' where username = '" + paramUsename + "'";
+            }
+            else
+            {
+                strSQL = " update adminuser set telephone = '" + paramTelephone + "' ,[address] = '" + paramAddress + "',email = '" + paramEmail + "',RoleID = '" + paramRoles + "' where username = '" + paramUsename + "'";
+            }
             int ReturnValue = 0;
-            string strSQL = " update adminuser set telephone = '"+paramTelephone+"' ,[address] = '"+paramAddress+"',email = '"+paramEmail+"'where username = '"+paramUsename+"' ";
             ReturnValue = mySqlconn.ReturnRowsLine(strSQL);
             return ReturnValue;
 
@@ -40,7 +48,7 @@ values('"+paramUsename+" ','"+paramPasswd+"','"+paramTelephone+"','"+paramEmail+
             DataTable myDt = new DataTable();
             Sqlconn mySqlconn = new Sqlconn();
 
-            string SQL = "Select username ,telephone,address,email from adminuser Where 1=1 ";
+            string SQL = "Select username ,telephone,address,email,RoleID from adminuser Where 1=1 ";
 
             if (paramUserName.Length > 0)
             {

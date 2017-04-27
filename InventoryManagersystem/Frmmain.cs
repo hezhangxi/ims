@@ -81,7 +81,9 @@ namespace InventoryManagersystem
         /// </summary>
         public void SetStatusStrip()
         {
+            BUUserManager MyUserManager = new BUUserManager();
             tSlUsername.Text = paramUserName;//状态栏
+            tslRoles.Text = MyUserManager.GetRole(paramUserName);
         }
         #endregion
 
