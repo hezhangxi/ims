@@ -1,1 +1,1 @@
-简单的进销存管理系统。
+A simple Iventory Manager System.
