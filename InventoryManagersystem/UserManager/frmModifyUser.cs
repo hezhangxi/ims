@@ -17,6 +17,7 @@ namespace InventoryManagersystem
         public string paramAddress = string.Empty;
         public string paramTelephone = string.Empty;
         public string paramEmail = string.Empty;
+        public string paramRoleName = string.Empty;
         BUUserManager MyUserManager = new BUUserManager();
         bool IsSystem = false;
         public frmModifyUser()
@@ -25,13 +26,14 @@ namespace InventoryManagersystem
             IsSystem = true;
          
         }
-        public frmModifyUser(string paramUserName,string paramAddress,string paramTelephone,string paramEmail)
+        public frmModifyUser(string paramUserName,string paramAddress,string paramTelephone,string paramEmail,string paramRoleName)
         {
             InitializeComponent();
             this.paramUserName = paramUserName;
             this.paramAddress = paramAddress;
             this.paramTelephone = paramTelephone;
             this.paramEmail = paramEmail;
+            this.paramRoleName = paramRoleName;
             IsSystem = false;
         }
 
@@ -45,6 +47,7 @@ namespace InventoryManagersystem
             this.txtBoxAddress.Text = this.paramAddress;
             this.txtBoxPhone.Text = this.paramTelephone;
             this.txtBoxEmail.Text = this.paramEmail;
+            this.comboBoxRoles.Text = this.paramRoleName;
 
         }
 
@@ -54,8 +57,10 @@ namespace InventoryManagersystem
             {
              this.paramUserName = this.Tag.ToString();
             }
-            SetInfo();
+
             SetRolesComb();
+            SetInfo();
+          
         }
         public void SetRolesComb()
         {

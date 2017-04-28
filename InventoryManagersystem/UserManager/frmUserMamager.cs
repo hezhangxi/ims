@@ -106,14 +106,15 @@ namespace InventoryManagersystem
                 return;
             }
 
-            string paramUserName = this.dataGridView1.SelectedRows[0].Cells["username"].Value.ToString();//获取到需要删除的行的主健
+            string paramUserName = this.dataGridView1.SelectedRows[0].Cells["username"].Value.ToString();
             string paramAddress = this.dataGridView1.SelectedRows[0].Cells["address"].Value.ToString();
             string paramTelephone = this.dataGridView1.SelectedRows[0].Cells["telephone"].Value.ToString();
             string paramEmail = this.dataGridView1.SelectedRows[0].Cells["email"].Value.ToString();
-           // int paramRoleID = MyUserManager.GetRoleID(this.dataGridView1.SelectedRows[0].Cells["email"].Value.ToString());
+            string paramRoleName = this.dataGridView1.SelectedRows[0].Cells["RoleName"].Value.ToString();
+           
             
 
-            frmModifyUser myFrmModifyUser = new frmModifyUser(paramUserName,paramAddress,paramTelephone,paramEmail);
+            frmModifyUser myFrmModifyUser = new frmModifyUser(paramUserName,paramAddress,paramTelephone,paramEmail,paramRoleName);
             DialogResult dr = new DialogResult();
 
      

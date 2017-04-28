@@ -45,7 +45,7 @@
             this.telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -63,7 +63,7 @@
             this.telephone,
             this.address,
             this.email,
-            this.Column1});
+            this.RoleName});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 17);
             this.dataGridView1.Name = "dataGridView1";
@@ -231,12 +231,12 @@
             this.email.ReadOnly = true;
             this.email.Width = 153;
             // 
-            // Column1
+            // RoleName
             // 
-            this.Column1.DataPropertyName = "RoleName";
-            this.Column1.HeaderText = "角色";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.RoleName.DataPropertyName = "RoleName";
+            this.RoleName.HeaderText = "角色";
+            this.RoleName.Name = "RoleName";
+            this.RoleName.ReadOnly = true;
             // 
             // frmUserMamager
             // 
@@ -278,6 +278,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn telephone;
         private System.Windows.Forms.DataGridViewTextBoxColumn address;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoleName;
     }
 }
