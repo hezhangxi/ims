@@ -48,7 +48,7 @@ values('"+paramUsename+" ','"+paramPasswd+"','"+paramTelephone+"','"+paramEmail+
             DataTable myDt = new DataTable();
             Sqlconn mySqlconn = new Sqlconn();
 
-            string SQL = "Select username ,telephone,address,email,RoleID from adminuser Where 1=1 ";
+            string SQL = "SELECT adminuser.username,adminuser.telephone,adminuser.email,adminuser.[address],T_RoleInfo.RoleName FROM adminuser,T_RoleInfo WHERE adminuser.RoleID = T_RoleInfo.RoleID ";
 
             if (paramUserName.Length > 0)
             {

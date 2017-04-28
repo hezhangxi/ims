@@ -99,6 +99,7 @@ namespace InventoryManagersystem
         private void btnUserMod_Click(object sender, EventArgs e)
         {
             int count = this.dataGridView1.SelectedRows.Count;
+            BUUserManager MyUserManager = new BUUserManager();
             if (count == 0)
             {
                 MessageBox.Show("请先搜索/刷新并选择需要修改的用户行","错误！",MessageBoxButtons.OK,MessageBoxIcon.Error);
@@ -109,6 +110,8 @@ namespace InventoryManagersystem
             string paramAddress = this.dataGridView1.SelectedRows[0].Cells["address"].Value.ToString();
             string paramTelephone = this.dataGridView1.SelectedRows[0].Cells["telephone"].Value.ToString();
             string paramEmail = this.dataGridView1.SelectedRows[0].Cells["email"].Value.ToString();
+           // int paramRoleID = MyUserManager.GetRoleID(this.dataGridView1.SelectedRows[0].Cells["email"].Value.ToString());
+            
 
             frmModifyUser myFrmModifyUser = new frmModifyUser(paramUserName,paramAddress,paramTelephone,paramEmail);
             DialogResult dr = new DialogResult();

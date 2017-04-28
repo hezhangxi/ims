@@ -233,7 +233,7 @@
             // 
             // Column1
             // 
-            this.Column1.DataPropertyName = "RoleID";
+            this.Column1.DataPropertyName = "RoleName";
             this.Column1.HeaderText = "角色";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;

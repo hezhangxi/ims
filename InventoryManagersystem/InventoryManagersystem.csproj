@@ -63,7 +63,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>128128.ico</ApplicationIcon>
+    <ApplicationIcon>images\128128.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -317,8 +317,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="128128.ico" />
-    <Content Include="9696.ico" />
+    <Content Include="images\128128.ico" />
+    <Content Include="images\9696.ico" />
     <Content Include="images\add.ICO" />
     <Content Include="images\attachment.ICO" />
     <Content Include="images\BackGround04.jpg" />
