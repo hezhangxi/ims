@@ -63,6 +63,29 @@ namespace BULayer
             return  MyDt;
 
         }
+
+        public bool CheckProductAddResult(int paramClassID, string paramProductName, string paramSpec, int UnitID, double paramPrice, int paramUserID, string paramRemark)
+        {
+
+            bool returnValue = false;
+            int rows = dal.ProductAddReturnLineCount(paramClassID,paramProductName,paramSpec,UnitID,paramPrice,paramUserID,paramRemark);
+            if (rows >0)
+            {
+                returnValue = true;
+                return returnValue;
+            }
+
+            return returnValue;
+        }
+
+         public object GetUserID(string paramUserName)
+        {
+            object returnValue = dal.QueryUserID(paramUserName);
+
+            return returnValue;
+        }
+
+
       
     }
 }

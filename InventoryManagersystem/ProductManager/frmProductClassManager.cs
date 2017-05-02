@@ -40,5 +40,10 @@ namespace InventoryManagersystem.ProductManager
             //MessageBox.Show(dt.AddDays(-7).ToString("yyyy-MM-dd HH:mm:ss"));
            // MessageBox.Show(dt.AddDays(0).ToString());
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

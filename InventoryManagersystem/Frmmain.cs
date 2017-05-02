@@ -245,8 +245,13 @@ namespace InventoryManagersystem
         
             treeView1.ExpandAll();//树节点展开
             SetStatusStrip();
+            //timer1_Tick(sender,e);
 
         }
+       // private void timer1_Tick(object sender, EventArgs e)
+       //{
+       //    this.lblDaytime.Text = DateTime.Now.ToLongTimeString();
+       //}
 
         private void MainTabControl_DoubleClick(object sender, EventArgs e)
         {

@@ -37,6 +37,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.clmClassID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmCreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmEmloyeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
@@ -124,6 +129,12 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmClassID,
+            this.clmClassName,
+            this.clmCreateDate,
+            this.clmEmloyeeID,
+            this.clmRemark});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 17);
             this.dataGridView1.Name = "dataGridView1";
@@ -133,6 +144,41 @@
             this.dataGridView1.Size = new System.Drawing.Size(566, 244);
             this.dataGridView1.TabIndex = 0;
             // 
+            // clmClassID
+            // 
+            this.clmClassID.DataPropertyName = "ProductClassID";
+            this.clmClassID.HeaderText = "商品ID";
+            this.clmClassID.Name = "clmClassID";
+            this.clmClassID.ReadOnly = true;
+            // 
+            // clmClassName
+            // 
+            this.clmClassName.DataPropertyName = "ProductClassName";
+            this.clmClassName.HeaderText = "商品名称";
+            this.clmClassName.Name = "clmClassName";
+            this.clmClassName.ReadOnly = true;
+            // 
+            // clmCreateDate
+            // 
+            this.clmCreateDate.DataPropertyName = "CreateDate";
+            this.clmCreateDate.HeaderText = "创建日期";
+            this.clmCreateDate.Name = "clmCreateDate";
+            this.clmCreateDate.ReadOnly = true;
+            // 
+            // clmEmloyeeID
+            // 
+            this.clmEmloyeeID.DataPropertyName = "EmloyeeID";
+            this.clmEmloyeeID.HeaderText = "操作员工";
+            this.clmEmloyeeID.Name = "clmEmloyeeID";
+            this.clmEmloyeeID.ReadOnly = true;
+            // 
+            // clmRemark
+            // 
+            this.clmRemark.DataPropertyName = "Remark";
+            this.clmRemark.HeaderText = "备注";
+            this.clmRemark.Name = "clmRemark";
+            this.clmRemark.ReadOnly = true;
+            // 
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(103, 31);
@@ -141,6 +187,7 @@
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "+ 增加";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // groupBox3
             // 
@@ -218,5 +265,10 @@
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmClassID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmClassName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmCreateDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmEmloyeeID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmRemark;
     }
 }

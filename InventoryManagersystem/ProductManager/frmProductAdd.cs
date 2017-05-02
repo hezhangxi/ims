@@ -10,6 +10,7 @@ using BULayer;
 
 namespace InventoryManagersystem.ProductManager
 {
+    
     public partial class frmProductAdd : Form
     {
         public frmProductAdd()
@@ -40,11 +41,40 @@ namespace InventoryManagersystem.ProductManager
         {
             SetProductComb();
             SetUnitComb();
-        }
+            this.txtBoxEmployee.Text = this.Tag.ToString();
+       }
 
         private void btnSaveNew_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(comBoxProductClass.SelectedValue.ToString());
+            //MessageBox.Show(comBoxProductClass.SelectedValue.ToString());
+            //输入判读
+
+            BUProductManagerResult myBUProductManagerResult = new BUProductManagerResult();
+
+            //int productID = Convert.ToInt32(this.txtBoxProductCode.Text.Trim());
+            //int userNameID = Convert.ToInt32(this.txtBoxEmployee.Text.Trim());
+            int userNameID = Convert.ToInt32(myBUProductManagerResult.GetUserID(this.txtBoxEmployee.Text));
+            string productName = this.txtBoxProductName.Text.Trim();
+            int productClassID = Convert.ToInt32(this.comBoxProductClass.SelectedValue);
+            string productSpec = this.txtBoxSpec.Text.Trim();
+            int productUnit = Convert.ToInt32(this.comBoxUnit.SelectedValue);
+            double producPrice = Convert.ToDouble(this.txtBOXproducPrice.Text.Trim());
+            string remark = this.txtBoxRemark.Text.Trim();
+
+            bool isTrue = myBUProductManagerResult.CheckProductAddResult(productClassID, productName, productSpec, productUnit, producPrice, userNameID, remark);
+
+            if (isTrue)
+            {
+                MessageBox.Show("数据添加成功！");
+               
+            }
+            else
+            {
+                MessageBox.Show("数据添加失败！");
+            }
+
+          
+
         }
 
         private void label2_Click(object sender, EventArgs e)

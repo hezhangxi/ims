@@ -30,6 +30,9 @@ namespace DALayer
             }
         }
 
+
+       
+
         /// <summary>
         /// 定义一个带参数的、返回值为string类型的ExcuteSql()方法
         /// 如果传入参数（SQL执行语句）执行查询后，返回结果集第一行第一列值为空，则返回空值，否则将结果集第一行第一列值返回给此方法ExcuteSql()并显示出来。
@@ -119,6 +122,25 @@ namespace DALayer
                     }
                 }
             }
+        }
+
+        public int ReturnQueryRows(string SQLString)
+        {
+
+            Sqlconn MySqlConn = new Sqlconn();
+               
+                    try
+                    {
+                        DataTable MyDt = MySqlConn.Query(SQLString).Tables[0];
+                        
+                        int rows = MyDt.Rows.Count;
+                        return rows;
+                    }
+                    catch (System.Data.SqlClient.SqlException e)
+                    {
+                        throw e;
+                    }
+              
         }
 
 

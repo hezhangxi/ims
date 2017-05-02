@@ -96,6 +96,47 @@ namespace DALayer
             return returnValue;
         }
 
+        public int ProductAddReturnLineCount(int paramClassID,string paramProductName,string paramSpec,int UnitID,double paramPrice,int paramUserID,string paramRemark)
+        {
+            
+            int returnValue = 0;
+            DateTime paramDateNow = DateTime.Now;
+            string strSql = @"INSERT INTO 
+	                          ProductList(ProductClassID,ProductName,ProductSpec,ProductUnitID,Price,EmployeeID,Createdate,Remark) 
+                              VALUES 
+                             (" + paramClassID + ",'" + paramProductName + "','" + paramSpec + "'," + UnitID + "," + paramPrice + "," + paramUserID + ",'"+paramDateNow+"','" + paramRemark + "') ";
+            Sqlconn MySqlconn = new Sqlconn();
+            returnValue = MySqlconn.ReturnRowsLine(strSql);
+
+            return returnValue;
+        }
+
+        public object QueryUserID(string paramUserName)
+        {
+          
+            string strSql = "Select EmployeeID from adminuser where username = '"+paramUserName+"'";
+            DataTable myDt = new DataTable();
+            myDt = MySqlConn.Query(strSql).Tables[0];
+            object returnValue = 0;
+            try
+            {
+                if (MySqlConn.ReturnQueryRows(strSql) >0)
+                {
+                    returnValue = myDt.Rows[0][0];
+                    return returnValue;
+                }
+                return returnValue;
+                
+            }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                
+                throw e;
+            }
+
+           
+
+        }
 
 
     }

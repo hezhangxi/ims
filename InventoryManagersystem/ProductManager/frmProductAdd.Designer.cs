@@ -31,28 +31,26 @@
             this.lblProductCode = new System.Windows.Forms.Label();
             this.txtBoxProductCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBoxEmployee = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBoxProductName = new System.Windows.Forms.TextBox();
             this.lblProductClass = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtBoxSpec = new System.Windows.Forms.TextBox();
-            this.lblProductCount = new System.Windows.Forms.Label();
-            this.txtBoxProductCount = new System.Windows.Forms.TextBox();
             this.lblProctPrice = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtBOXproducPrice = new System.Windows.Forms.TextBox();
             this.lblProductUnit = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtBoxRemark = new System.Windows.Forms.TextBox();
             this.btnSaveNew = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.comBoxProductClass = new System.Windows.Forms.ComboBox();
             this.comBoxUnit = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -82,12 +80,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "操作员工";
             // 
-            // textBox1
+            // txtBoxEmployee
             // 
-            this.textBox1.Location = new System.Drawing.Point(248, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 1;
+            this.txtBoxEmployee.Location = new System.Drawing.Point(248, 24);
+            this.txtBoxEmployee.Name = "txtBoxEmployee";
+            this.txtBoxEmployee.Size = new System.Drawing.Size(100, 21);
+            this.txtBoxEmployee.TabIndex = 1;
             // 
             // label3
             // 
@@ -130,42 +128,26 @@
             this.txtBoxSpec.Size = new System.Drawing.Size(145, 21);
             this.txtBoxSpec.TabIndex = 1;
             // 
-            // lblProductCount
-            // 
-            this.lblProductCount.AutoSize = true;
-            this.lblProductCount.Location = new System.Drawing.Point(14, 106);
-            this.lblProductCount.Name = "lblProductCount";
-            this.lblProductCount.Size = new System.Drawing.Size(53, 12);
-            this.lblProductCount.TabIndex = 0;
-            this.lblProductCount.Text = "数    量";
-            // 
-            // txtBoxProductCount
-            // 
-            this.txtBoxProductCount.Location = new System.Drawing.Point(71, 103);
-            this.txtBoxProductCount.Name = "txtBoxProductCount";
-            this.txtBoxProductCount.Size = new System.Drawing.Size(100, 21);
-            this.txtBoxProductCount.TabIndex = 1;
-            // 
             // lblProctPrice
             // 
             this.lblProctPrice.AutoSize = true;
-            this.lblProctPrice.Location = new System.Drawing.Point(389, 98);
+            this.lblProctPrice.Location = new System.Drawing.Point(212, 99);
             this.lblProctPrice.Name = "lblProctPrice";
             this.lblProctPrice.Size = new System.Drawing.Size(53, 12);
             this.lblProctPrice.TabIndex = 0;
             this.lblProctPrice.Text = "单    价";
             // 
-            // textBox5
+            // txtBOXproducPrice
             // 
-            this.textBox5.Location = new System.Drawing.Point(446, 95);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(145, 21);
-            this.textBox5.TabIndex = 1;
+            this.txtBOXproducPrice.Location = new System.Drawing.Point(269, 96);
+            this.txtBOXproducPrice.Name = "txtBOXproducPrice";
+            this.txtBOXproducPrice.Size = new System.Drawing.Size(145, 21);
+            this.txtBOXproducPrice.TabIndex = 1;
             // 
             // lblProductUnit
             // 
             this.lblProductUnit.AutoSize = true;
-            this.lblProductUnit.Location = new System.Drawing.Point(191, 104);
+            this.lblProductUnit.Location = new System.Drawing.Point(14, 105);
             this.lblProductUnit.Name = "lblProductUnit";
             this.lblProductUnit.Size = new System.Drawing.Size(53, 12);
             this.lblProductUnit.TabIndex = 0;
@@ -180,13 +162,13 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "备    注";
             // 
-            // textBox6
+            // txtBoxRemark
             // 
-            this.textBox6.Location = new System.Drawing.Point(71, 139);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(457, 104);
-            this.textBox6.TabIndex = 1;
+            this.txtBoxRemark.Location = new System.Drawing.Point(71, 139);
+            this.txtBoxRemark.Multiline = true;
+            this.txtBoxRemark.Name = "txtBoxRemark";
+            this.txtBoxRemark.Size = new System.Drawing.Size(457, 104);
+            this.txtBoxRemark.TabIndex = 1;
             // 
             // btnSaveNew
             // 
@@ -233,7 +215,7 @@
             "3",
             "4",
             "5"});
-            this.comBoxUnit.Location = new System.Drawing.Point(248, 98);
+            this.comBoxUnit.Location = new System.Drawing.Point(71, 99);
             this.comBoxUnit.Name = "comBoxUnit";
             this.comBoxUnit.Size = new System.Drawing.Size(100, 20);
             this.comBoxUnit.TabIndex = 4;
@@ -245,18 +227,16 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.comBoxUnit);
             this.groupBox1.Controls.Add(this.lblProctPrice);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.txtBOXproducPrice);
             this.groupBox1.Controls.Add(this.lblProductCode);
             this.groupBox1.Controls.Add(this.comBoxProductClass);
             this.groupBox1.Controls.Add(this.txtBoxProductCode);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.lblProductCount);
             this.groupBox1.Controls.Add(this.txtBoxProductName);
             this.groupBox1.Controls.Add(this.txtBoxSpec);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtBoxEmployee);
             this.groupBox1.Controls.Add(this.lblProductUnit);
-            this.groupBox1.Controls.Add(this.txtBoxProductCount);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.txtBoxRemark);
             this.groupBox1.Controls.Add(this.lblProductClass);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
@@ -266,6 +246,25 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "编辑区";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(177, 102);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(11, 12);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "+";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(354, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(11, 12);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "+";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // groupBox2
             // 
@@ -278,25 +277,6 @@
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "操作区";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(354, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(11, 12);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "+";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(354, 101);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(11, 12);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "+";
             // 
             // frmProductAdd
             // 
@@ -321,19 +301,17 @@
         private System.Windows.Forms.Label lblProductCode;
         private System.Windows.Forms.TextBox txtBoxProductCode;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBoxEmployee;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtBoxProductName;
         private System.Windows.Forms.Label lblProductClass;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtBoxSpec;
-        private System.Windows.Forms.Label lblProductCount;
-        private System.Windows.Forms.TextBox txtBoxProductCount;
         private System.Windows.Forms.Label lblProctPrice;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtBOXproducPrice;
         private System.Windows.Forms.Label lblProductUnit;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtBoxRemark;
         private System.Windows.Forms.Button btnSaveNew;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnExit;

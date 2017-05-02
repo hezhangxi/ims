@@ -44,6 +44,7 @@ namespace InventoryManagersystem.ProductManager
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
             frmProductAdd MyfrmProductAdd = new frmProductAdd();
+            MyfrmProductAdd.Tag = this.Tag;
             MyfrmProductAdd.ShowDialog();
         }
     }
