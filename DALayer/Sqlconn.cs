@@ -104,6 +104,8 @@ namespace DALayer
             }
         }
 
+
+        // ReturnRowsLine(string SQLString) 仅用于update,insert以及delete,其它都会返回-1
         public int ReturnRowsLine(string SQLString)
         {
             using (SqlConnection connection = new SqlConnection(strConn))
@@ -124,6 +126,7 @@ namespace DALayer
             }
         }
 
+        //ReturnQueryRows(string SQLString) 用于查询返回表的列数
         public int ReturnQueryRows(string SQLString)
         {
 
