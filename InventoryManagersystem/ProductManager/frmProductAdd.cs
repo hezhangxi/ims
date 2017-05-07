@@ -58,20 +58,39 @@ namespace InventoryManagersystem.ProductManager
             int productClassID = Convert.ToInt32(this.comBoxProductClass.SelectedValue);
             string productSpec = this.txtBoxSpec.Text.Trim();
             int productUnit = Convert.ToInt32(this.comBoxUnit.SelectedValue);
-            double producPrice = Convert.ToDouble(this.txtBOXproducPrice.Text.Trim());
+            double productPrice =Convert.ToDouble(this.txtBOXproducPrice.Text.Trim());
             string remark = this.txtBoxRemark.Text.Trim();
 
-            bool isTrue = myBUProductManagerResult.CheckProductAddResult(productClassID, productName, productSpec, productUnit, producPrice, userNameID, remark);
-
-            if (isTrue)
+            bool isTrue = myBUProductManagerResult.CheckProductAddResult(productClassID, productName, productSpec, productUnit, productPrice, userNameID, remark);
+            if (productName.Length == 0 )
             {
-                MessageBox.Show("数据添加成功！");
-               
+                MessageBox.Show("产品名称不能为空！");
+            }
+            else if (productSpec.Length ==0)
+            {
+                MessageBox.Show("规格型号不能为空！");
+            }
+            else if (productPrice == null)
+            {
+                MessageBox.Show("价格不能为空！");
             }
             else
             {
-                MessageBox.Show("数据添加失败！");
+                if (isTrue)
+                {
+
+                    MessageBox.Show("数据添加成功！");
+                    this.DialogResult = DialogResult.OK;
+
+                }
+                else
+                {
+                    MessageBox.Show("数据添加失败！");
+                    this.DialogResult = DialogResult.No;
+                }
             }
+
+           
 
           
 
@@ -81,6 +100,37 @@ namespace InventoryManagersystem.ProductManager
         {
             frmProductClassAdd MyfrmPCA = new frmProductClassAdd();
             MyfrmPCA.ShowDialog();
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            BUProductManagerResult myBUProductManagerResult = new BUProductManagerResult();
+
+            //int productID = Convert.ToInt32(this.txtBoxProductCode.Text.Trim());
+            //int userNameID = Convert.ToInt32(this.txtBoxEmployee.Text.Trim());
+            int userNameID = Convert.ToInt32(myBUProductManagerResult.GetUserID(this.txtBoxEmployee.Text));
+            string productName = this.txtBoxProductName.Text.Trim();
+            int productClassID = Convert.ToInt32(this.comBoxProductClass.SelectedValue);
+            string productSpec = this.txtBoxSpec.Text.Trim();
+            int productUnit = Convert.ToInt32(this.comBoxUnit.SelectedValue);
+            double producPrice = Convert.ToDouble(this.txtBOXproducPrice.Text.Trim());
+            string remark = this.txtBoxRemark.Text.Trim();
+
+            bool isTrue = myBUProductManagerResult.CheckProductAddResult(productClassID, productName, productSpec, productUnit, producPrice, userNameID, remark);
+
+            if (isTrue)
+            {
+
+                MessageBox.Show("数据添加成功！");
+                this.DialogResult = DialogResult.OK;
+
+            }
+            else
+            {
+                MessageBox.Show("数据添加失败！");
+                this.DialogResult = DialogResult.No;
+            }
 
         }
     }
