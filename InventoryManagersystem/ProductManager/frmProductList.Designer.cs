@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductList));
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBoxProductCode = new System.Windows.Forms.TextBox();
             this.lblProductName = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtBoxProductName = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -58,13 +58,13 @@
             this.label1.Text = "商品编码";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // textBox1
+            // txtBoxProductCode
             // 
-            this.textBox1.Location = new System.Drawing.Point(71, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(113, 21);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.txtBoxProductCode.Location = new System.Drawing.Point(71, 31);
+            this.txtBoxProductCode.Name = "txtBoxProductCode";
+            this.txtBoxProductCode.Size = new System.Drawing.Size(113, 21);
+            this.txtBoxProductCode.TabIndex = 1;
+            this.txtBoxProductCode.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // lblProductName
             // 
@@ -75,12 +75,12 @@
             this.lblProductName.TabIndex = 0;
             this.lblProductName.Text = "商品名称";
             // 
-            // textBox2
+            // txtBoxProductName
             // 
-            this.textBox2.Location = new System.Drawing.Point(268, 31);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(118, 21);
-            this.textBox2.TabIndex = 1;
+            this.txtBoxProductName.Location = new System.Drawing.Point(268, 31);
+            this.txtBoxProductName.Name = "txtBoxProductName";
+            this.txtBoxProductName.Size = new System.Drawing.Size(118, 21);
+            this.txtBoxProductName.TabIndex = 1;
             // 
             // btnSearch
             // 
@@ -90,6 +90,7 @@
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "查询";
             this.btnSearch.UseVisualStyleBackColor = true;
+
             // 
             // dataGridView1
             // 
@@ -117,8 +118,8 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.btnSearch);
             this.groupBox2.Controls.Add(this.lblProductName);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txtBoxProductCode);
+            this.groupBox2.Controls.Add(this.txtBoxProductName);
             this.groupBox2.Location = new System.Drawing.Point(23, 15);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(562, 78);
@@ -199,9 +200,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBoxProductCode;
         private System.Windows.Forms.Label lblProductName;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtBoxProductName;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;

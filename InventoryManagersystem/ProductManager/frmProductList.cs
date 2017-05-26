@@ -45,7 +45,11 @@ namespace InventoryManagersystem.ProductManager
         {
             frmProductAdd MyfrmProductAdd = new frmProductAdd();
             MyfrmProductAdd.Tag = this.Tag;
-            MyfrmProductAdd.ShowDialog();
+            if (MyfrmProductAdd.DialogResult == DialogResult.OK)
+            {
+		        //刷新动作
+            }
+            
         }
     }
 }
